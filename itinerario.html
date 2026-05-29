@@ -1,62 +1,110 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo Puno - Itinerario Interactivo</title>
-    <meta name="description" content="Planifica tu viaje a Puno: calcula presupuesto y mira ubicaciones en el mapa.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/estilo.css">
-</head>
-<body>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Cargar destinos desde el JSON y llenar el select
+    const destinoSelect = document.getElementById('destinoSelect');
+    let todosDestinos = [];
 
-    <main class="container mt-5 pt-5">
-        <h2 class="text-center mb-4">🗺️ Planifica tu viaje</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <form id="formItinerario" class="p-3 border rounded shadow-sm bg-white">
-                    <div class="mb-3">
-                        <label class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombre" required pattern="[A-Za-záéíóúñÑ ]{3,}">
-                        <div class="invalid-feedback">Mínimo 3 letras</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
-                        <div class="invalid-feedback">Correo válido requerido</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Días de estadía</label>
-                        <input type="number" class="form-control" id="dias" required min="1" max="15" value="2">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Presupuesto por día (S/.)</label>
-                        <input type="number" class="form-control" id="presupuesto" required min="50" value="150">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Destino principal</label>
-                        <select class="form-select" id="destinoSelect">
-                            <option value="Lago Titicaca">Lago Titicaca</option>
-                            <option value="Islas Uros">Islas Uros</option>
-                            <option value="Sillustani">Sillustani</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Calcular presupuesto</button>
-                    <div id="resultado" class="alert alert-success mt-3 d-none"></div>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <div id="mapa"></div>
-                <p class="text-muted small mt-2">📍 Marcadores: Lago Titicaca, Islas Uros, Sillustani, Taquile, Cutimbo</p>
-            </div>
-        </div>
-    </main>
+    fetch('data/datos.json')
+        .then(response => response.json())
+        .then(data => {
+            todosDestinos = data.destinos;
+            destinoSelect.innerHTML = '';
+            todosDestinos.forEach(destino => {
+                const option = document.createElement('option');
+                option.value = destino.nombre;
+                option.textContent = destino.nombre;
+                destinoSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error cargando destinos para el select:', error);
+            destinoSelect.innerHTML = '<option value="">Error al cargar destinos</option>';
+        });
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="jscript/comun.js"></script>
-    <script src="jscript/itinerario.js"></script>
-</body>
-</html>
+    if (document.getElementById('mapa')) {
+        const mapa = L.map('mapa').setView([-15.8402, -69.9562], 9);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+        }).addTo(mapa);
+        L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("<b>Lago Titicaca</b>");
+        L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("<b>Islas Uros</b>");
+        L.marker([-15.6942, -70.0976]).addTo(mapa).bindPopup("<b>Sillustani</b>");
+        L.marker([-15.7747, -69.6941]).addTo(mapa).bindPopup("<b>Taquile</b>");
+        L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("<b>Cutimbo</b>");
+    }
+
+    const form = document.getElementById('formItinerario');
+    const nombreInput = document.getElementById('nombre');
+    const emailInput = document.getElementById('email');
+    const diasInput = document.getElementById('dias');
+    const presupuestoInput = document.getElementById('presupuesto');
+
+    function validarCampo(input, condicion, mensaje) {
+        if (condicion) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+            return true;
+        } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+            const feedback = input.nextElementSibling;
+            if (feedback && feedback.classList.contains('invalid-feedback')) {
+                feedback.innerText = mensaje;
+            }
+            return false;
+        }
+    }
+
+    function validarFormulario() {
+        let valido = true;
+        valido &= validarCampo(nombreInput, nombreInput.value.trim().length >= 3, 'Mínimo 3 letras');
+        valido &= validarCampo(emailInput, emailInput.value.includes('@') && emailInput.value.includes('.'), 'Correo válido requerido');
+        valido &= validarCampo(diasInput, parseInt(diasInput.value) >= 1 && parseInt(diasInput.value) <= 15, 'Días entre 1 y 15');
+        valido &= validarCampo(presupuestoInput, parseInt(presupuestoInput.value) >= 50, 'Mínimo S/ 50 por día');
+        valido &= validarCampo(destinoSelect, destinoSelect.value !== '', 'Seleccione un destino');
+        return valido;
+    }
+
+    function generarItinerario(destinoNombre, dias) {
+        // Plan base personalizado por destino
+        const planes = {
+            "Titicaca": "Día 1: Llegada y paseo en bote. Día 2: Visita a islas del Sol y Luna.",
+            "Uros": "Día 1: Recorrido por islas flotantes. Día 2: Taller de artesanía en totora.",
+            "Sillustani": "Día 1: Visita a las chullpas. Día 2: Caminata por la laguna Umayo.",
+            "Taquile": "Día 1: Navegación y senderismo. Día 2: Conoce los tejidos tradicionales.",
+            "Cutimbo": "Día 1: Visita a las chullpas pintadas. Día 2: Mirador del altiplano.",
+            "Amantani": "Día 1: Llegada y noche con familia local. Día 2: Subida a templos Pachatata.",
+            "Molloco": "Día 1: Recorrido por las chullpas. Día 2: Fotografía y naturaleza.",
+            "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica."
+        };
+        // Buscar coincidencia parcial (ej: "Lago Titicaca" contiene "Titicaca")
+        let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre para explorar.";
+        if (dias <= 2) return plan.split('.')[0] + '.';
+        if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
+        return plan;
+    }
+    nombreInput.addEventListener('input', validarFormulario);
+    emailInput.addEventListener('input', validarFormulario);
+    diasInput.addEventListener('input', validarFormulario);
+    presupuestoInput.addEventListener('input', validarFormulario);
+    destinoSelect.addEventListener('change', validarFormulario);
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!validarFormulario()) {
+                alert('Corrige los campos marcados en rojo');
+                return;
+            }
+            const nombre = nombreInput.value.trim();
+            const dias = parseInt(diasInput.value);
+            const presupuesto = parseInt(presupuestoInput.value);
+            const destino = destinoSelect.value;
+            const total = dias * presupuesto;
+            const itinerario = generarItinerario(destino, dias);
+            const resultado = document.getElementById('resultado');
+            resultado.classList.remove('d-none');
+            resultado.innerHTML = `${nombre}, presupuesto total para ${dias} días: S/ ${total}. Itinerario sugerido: ${itinerario}`;
+        });
+    }
+});
