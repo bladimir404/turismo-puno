@@ -16,9 +16,10 @@ function mostrarDestinos(lista) {
         const card = document.createElement('div');
         card.className = 'card card-destino h-100';
         let badgeColor = 'bg-secondary';
-        if (destino.categoria === 'lago') badgeColor = 'bg-primary';
-        else if (destino.categoria === 'isla') badgeColor = 'bg-success';
-        else if (destino.categoria === 'arqueologia') badgeColor = 'bg-warning text-dark';
+if (destino.categoria === 'lago') badgeColor = 'bg-primary';
+else if (destino.categoria === 'isla') badgeColor = 'bg-success';
+else if (destino.categoria === 'arqueologia') badgeColor = 'bg-warning text-dark';
+else if (destino.categoria === 'pueblo') badgeColor = 'bg-info text-dark';
         card.innerHTML = `
             <img src="${destino.imagen}" class="card-img-top" alt="${destino.nombre}">
             <div class="card-body">
