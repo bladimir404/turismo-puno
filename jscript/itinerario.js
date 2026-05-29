@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mapa
+    const destinoSelect = document.getElementById('destinoSelect');
+
+    fetch('../data/datos.json')
+        .then(response => response.json())
+        .then(data => {
+            const destinos = data.destinos;
+            destinoSelect.innerHTML = '';
+            destinos.forEach(destino => {
+                const option = document.createElement('option');
+                option.value = destino.nombre;
+                option.textContent = destino.nombre;
+                destinoSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error cargando destinos:', error);
+            destinoSelect.innerHTML = '<option value="">Error al cargar destinos</option>';
+        });
+
     if (document.getElementById('mapa')) {
         const mapa = L.map('mapa').setView([-15.8402, -69.9562], 9);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -12,15 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("Cutimbo");
     }
 
-    // Elementos del formulario
     const form = document.getElementById('formItinerario');
     const nombreInput = document.getElementById('nombre');
     const emailInput = document.getElementById('email');
     const diasInput = document.getElementById('dias');
     const presupuestoInput = document.getElementById('presupuesto');
-    const destinoSelect = document.getElementById('destinoSelect');
 
-    // Validación de campos
     function validarCampo(input, condicion, mensaje) {
         if (condicion) {
             input.classList.remove('is-invalid');
@@ -47,33 +62,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return valido;
     }
 
-    // Generar itinerario personalizado
-    function generarItinerario(destino, dias) {
+    function generarItinerario(destinoNombre, dias) {
         const planes = {
-            "Lago Titicaca": "Día 1: Llegada y paseo en bote. Día 2: Visita a islas del Sol y Luna. Día 3: Comunidades locales.",
-            "Islas Uros": "Día 1: Recorrido por islas flotantes. Día 2: Taller de artesanía. Día 3: Navegación en balsa.",
-            "Sillustani": "Día 1: Visita a chullpas. Día 2: Caminata por laguna Umayo. Día 3: Miradores.",
-            "Taquile": "Día 1: Navegación y senderismo. Día 2: Tejidos tradicionales. Día 3: Encuentro con comunidades.",
-            "Molloco": "Día 1: Recorrido por chullpas. Día 2: Fotografía y naturaleza. Día 3: Excursión cultural.",
-            "Amantani": "Día 1: Llegada y noche con familia. Día 2: Subida a templos Pachatata. Día 3: Convivencia.",
-            "Pucará": "Día 1: Pirámide y museo lítico. Día 2: Talleres de cerámica. Día 3: Visita a talleres.",
-            "Cutimbo": "Día 1: Chullpas pintadas. Día 2: Mirador del altiplano. Día 3: Senderismo.",
-            "Lampa": "Día 1: Templo Santiago Apóstol. Día 2: Capilla Sixtina puneña. Día 3: Recorrido urbano."
+            "Titicaca": "Día 1: Llegada y paseo en bote. Día 2: Visita a islas del Sol y Luna.",
+            "Uros": "Día 1: Recorrido por islas flotantes. Día 2: Taller de artesanía en totora.",
+            "Sillustani": "Día 1: Visita a las chullpas. Día 2: Caminata por la laguna Umayo.",
+            "Taquile": "Día 1: Navegación y senderismo. Día 2: Conoce los tejidos tradicionales.",
+            "Cutimbo": "Día 1: Visita a las chullpas pintadas. Día 2: Mirador del altiplano.",
+            "Amantani": "Día 1: Llegada y noche con familia local. Día 2: Subida a templos Pachatata.",
+            "Molloco": "Día 1: Recorrido por las chullpas. Día 2: Fotografía y naturaleza.",
+            "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica."
         };
-        let plan = planes[destino] || "Día 1: Recorrido por el destino. Día 2: Tiempo libre. Día 3: Actividades culturales.";
+        let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre.";
         if (dias <= 2) return plan.split('.')[0] + '.';
-        if (dias >= 4) plan += " Día adicional: Explora otros atractivos cercanos.";
+        if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
         return plan;
     }
 
-    // Eventos en tiempo real
     nombreInput.addEventListener('input', validarFormulario);
     emailInput.addEventListener('input', validarFormulario);
     diasInput.addEventListener('input', validarFormulario);
     presupuestoInput.addEventListener('input', validarFormulario);
     destinoSelect.addEventListener('change', validarFormulario);
 
-    // Envío del formulario
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -87,5 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultado.classList.remove('d-none');
             resultado.innerHTML = `${nombreInput.value.trim()}, presupuesto total para ${diasInput.value} días: S/ ${total}. Itinerario sugerido: ${itinerario}`;
         });
+    }
+});
     }
 });
