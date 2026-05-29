@@ -1,6 +1,6 @@
 let todosDestinos = [];
 
-fetch('../data/datos.json')
+fetch('/turismo-puno/data/datos.json')
     .then(response => response.json())
     .then(data => {
         todosDestinos = data.destinos;
