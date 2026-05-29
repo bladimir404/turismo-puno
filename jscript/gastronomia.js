@@ -1,4 +1,4 @@
-fetch('/turismo-puno/data/datos.json')
+fetch('data/datos.json')
     .then(response => response.json())
     .then(data => {
         const gastronomiaData = data.gastronomia;
