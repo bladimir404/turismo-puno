@@ -6,7 +6,7 @@
       "categoria": "lago",
       "descripcion": "El lago navegable más alto del mundo, cuna mística de la civilización andina.",
       "detalle": "Cuerpo de agua sagrado a 3812 metros de altitud; resguarda islas ancestrales, biodiversidad única y mitos de origen incaico.",
-      "imagen": "https://www.viaggidelgenio.it/wp-content/uploads/2026/02/peru-titicaca.jpg"
+      "imagen": "images/"
     },
     {
       "id": 2,
@@ -55,6 +55,14 @@
       "descripcion": "Complejo arqueológico monumental preínca en Lampa, cuna de la arquitectura y litoescultura del altiplano.",
       "detalle": "Presenta la gran pirámide escalonada de Kalasaya, un templo semisubterráneo en 'U' y monolitos rituales del 'Degollador'.",
       "imagen": "https://punotours.com.pe/wp-content/uploads/2025/07/tour-lampa-pucara-1dia_01.jpg"
+    },
+        {
+      "id": 8,
+      "nombre": "Lampa",
+      "categoria": "pueblo",
+      "descripcion": "La ciudad rosa del altiplano, con arquitectura colonial.",
+      "detalle": "Templo Santiago Apóstol y réplica de la Capilla Sixtina en su interior.",
+      "imagen": "https://picsum.photos/id/128/300/200"
     }
   ],
   "cultura": [

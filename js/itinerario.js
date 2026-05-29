@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
+
     fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
-            destinoSelect.innerHTML = '';
+            destinoSelect.innerHTML = '<option value="">Seleccione un destino</option>';
             destinos.forEach(destino => {
                 const option = document.createElement('option');
                 option.value = destino.nombre;
@@ -22,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '© OSM'
         }).addTo(mapa);
-        L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("Lago Titicaca");
-        L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("Islas Uros");
-        L.marker([-15.6942, -70.0976]).addTo(mapa).bindPopup("Sillustani");
-        L.marker([-15.7747, -69.6941]).addTo(mapa).bindPopup("Taquile");
-        L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("Cutimbo");
+        L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("Lago Titicaca").bindTooltip("Lago Titicaca");
+        L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("Islas Uros").bindTooltip("Islas Uros");
+        L.marker([-15.6942, -70.0976]).addTo(mapa).bindPopup("Sillustani").bindTooltip("Sillustani");
+        L.marker([-15.7747, -69.6941]).addTo(mapa).bindPopup("Taquile").bindTooltip("Taquile");
+        L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("Cutimbo").bindTooltip("Cutimbo");
     }
 
     const form = document.getElementById('formItinerario');
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica."
         };
         let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
-        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre para explorar.";
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre.";
         if (dias <= 2) return plan.split('.')[0] + '.';
         if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
         return plan;

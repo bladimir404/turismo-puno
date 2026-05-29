@@ -15,10 +15,15 @@ function mostrarDestinos(lista) {
     lista.forEach(destino => {
         const card = document.createElement('div');
         card.className = 'card card-destino h-100';
+        let badgeColor = 'bg-secondary';
+        if (destino.categoria === 'lago') badgeColor = 'bg-primary';
+        else if (destino.categoria === 'isla') badgeColor = 'bg-success';
+        else if (destino.categoria === 'arqueologia') badgeColor = 'bg-warning text-dark';
         card.innerHTML = `
-            <img src="${destino.imagen}" class="card-img-top" alt="${destino.nombre}" style="height:200px; object-fit:cover;">
+            <img src="${destino.imagen}" class="card-img-top" alt="${destino.nombre}">
             <div class="card-body">
                 <h5 class="card-title">${destino.nombre}</h5>
+                <span class="badge ${badgeColor} mb-2">${destino.categoria}</span>
                 <p class="card-text">${destino.descripcion}</p>
                 <button class="btn btn-primary ver-mas" data-nombre="${destino.nombre}" data-detalle="${destino.detalle}">Ver más</button>
             </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+
 :root {
     --azul-titicaca: #0A4B7A;
     --dorado-candelaria: #F4C542;
@@ -7,9 +9,8 @@
     --negro-suave: #212529;
 }
 
-/* ESTILOS GENERALES */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--gris-claro);
     color: var(--negro-suave);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -20,7 +21,6 @@ body.modo-oscuro {
     background-color: #121212;
     color: #e0e0e0;
 }
-
 body.modo-oscuro .card,
 body.modo-oscuro .bg-white,
 body.modo-oscuro .navbar-dark,
@@ -29,21 +29,17 @@ body.modo-oscuro .accordion-body {
     background-color: #1e1e1e !important;
     color: #ddd !important;
 }
-
 body.modo-oscuro .accordion-button.collapsed {
     background-color: #252525 !important;
     color: #fff !important;
 }
-
 body.modo-oscuro .border {
     border-color: #444 !important;
 }
-
 body.modo-oscuro .btn-outline-primary {
     color: var(--dorado-candelaria);
     border-color: var(--dorado-candelaria);
 }
-
 body.modo-oscuro .btn-outline-primary:hover {
     background-color: var(--dorado-candelaria);
     color: #000;
@@ -60,19 +56,16 @@ body.modo-oscuro .btn-outline-primary:hover {
 .hero-carousel .carousel-item {
     min-height: 50vh;
 }
-
 @media (min-width: 768px) {
     .hero-carousel .carousel-item {
         min-height: 70vh;
     }
 }
-
 .hero-carousel .carousel-item img {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
-
 .carousel-caption {
     background: rgba(0, 0, 0, 0.65);
     border-radius: 1rem;
@@ -81,7 +74,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     left: 10%;
     right: 10%;
 }
-
 @media (max-width: 576px) {
     .carousel-caption {
         bottom: 10%;
@@ -102,21 +94,24 @@ body.modo-oscuro .btn-outline-primary:hover {
     gap: 1.5rem;
     margin-top: 2rem;
 }
-
 .card-destino {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 1rem;
     overflow: hidden;
 }
-
 .card-destino:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
-
 .card-img-top {
     height: 200px;
     object-fit: cover;
+}
+
+.badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 20px;
 }
 
 /* FILTROS */
@@ -124,7 +119,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     margin: 0.25rem;
     transition: all 0.2s;
 }
-
 .filtro-btn:hover {
     transform: scale(1.02);
 }
@@ -137,39 +131,28 @@ body.modo-oscuro .btn-outline-primary:hover {
     border-radius: 0.5rem !important;
     overflow: hidden;
 }
-
 #accordionCultura .accordion-button:focus {
     box-shadow: none !important;
     border-color: var(--azul-titicaca) !important;
 }
-
 #accordionCultura .accordion-button:not(.collapsed) {
     background-color: var(--azul-titicaca) !important;
     color: var(--blanco) !important;
 }
-
 #accordionCultura .accordion-button::after {
     filter: none !important;
 }
-
 #accordionCultura .accordion-button:not(.collapsed)::after {
     filter: brightness(0) invert(1) !important;
 }
 
-.object-fit-cover {
-    object-fit: cover !important;
-}
-
-/* FORMULARIO */
 input:invalid, select:invalid {
     border-color: var(--rojo-tierra);
 }
-
 .invalid-feedback {
     font-size: 0.8rem;
 }
 
-/* MAPA */
 #mapa {
     height: 350px;
     width: 100%;
@@ -177,28 +160,24 @@ input:invalid, select:invalid {
     margin-top: 1rem;
 }
 
-/* FOOTER */
+
 footer {
     background-color: #212529;
     color: white;
 }
-
 footer a {
     color: var(--dorado-candelaria);
     text-decoration: none;
 }
-
 footer a:hover {
     text-decoration: underline;
 }
 
-/* BOTÓN MODO OSCURO */
 .btn-modo {
     cursor: pointer;
     font-size: 1.2rem;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .grid-destinos {
         grid-template-columns: 1fr;
@@ -216,7 +195,6 @@ footer a:hover {
 .modal-content {
     animation: fadeInUp 0.3s ease-out;
 }
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -228,11 +206,9 @@ footer a:hover {
     }
 }
 
-/* TARJETAS GASTRONOMÍA */
 .card {
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
