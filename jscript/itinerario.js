@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const diasInput = document.getElementById('dias');
     const presupuestoInput = document.getElementById('presupuesto');
+    const destinoSelect = document.getElementById('destinoSelect');
 
     function validarCampo(input, condicion, mensaje) {
         if (condicion) {
@@ -35,11 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function validarFormulario() {
         let valido = true;
-        valido &= validarCampo(nombreInput, nombreInput.value.trim().length >= 3, 'Mínimo 3 letras');
-        valido &= validarCampo(emailInput, emailInput.value.includes('@') && emailInput.value.includes('.'), 'Correo válido requerido');
-        valido &= validarCampo(diasInput, parseInt(diasInput.value) >= 1 && parseInt(diasInput.value) <= 15, 'Días entre 1 y 15');
-        valido &= validarCampo(presupuestoInput, parseInt(presupuestoInput.value) >= 50, 'Mínimo S/ 50 por día');
+        valido &= validarCampo(nombreInput, nombreInput.value.trim().length >= 3, 'Minimo 3 letras');
+        valido &= validarCampo(emailInput, emailInput.value.includes('@') && emailInput.value.includes('.'), 'Correo valido requerido');
+        valido &= validarCampo(diasInput, parseInt(diasInput.value) >= 1 && parseInt(diasInput.value) <= 15, 'Dias entre 1 y 15');
+        valido &= validarCampo(presupuestoInput, parseInt(presupuestoInput.value) >= 50, 'Minimo S/ 50 por dia');
         return valido;
+    }
+
+    function generarItinerario(destino, dias) {
+        let plan = '';
+        if (destino === 'Lago Titicaca') {
+            plan = 'Dia 1: Llegada a Puno y paseo por el malecón. Dia 2: Navegacion a las islas del Sol y la Luna. Dia 3: Visita a comunidades locales.';
+        } else if (destino === 'Islas Uros') {
+            plan = 'Dia 1: Recorrido por las islas flotantes de totora. Dia 2: Taller de artesania Uros y navegacion en balsa.';
+        } else if (destino === 'Sillustani') {
+            plan = 'Dia 1: Visita a las chullpas y laguna Umayo. Dia 2: Excursion a los miradores cercanos.';
+        } else {
+            plan = 'Dia 1: Recorrido por el destino principal. Dia 2: Tiempo libre y actividades culturales.';
+        }
+        // Ajustar número de días si es mayor o menor
+        if (dias <= 2) {
+            return plan.split('.')[0] + '.';
+        } else if (dias >= 4) {
+            plan += ' Dia adicional: Explora otros atractivos cercanos.';
+        }
+        return plan;
     }
 
     nombreInput.addEventListener('input', validarFormulario);
@@ -54,10 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Corrige los campos marcados en rojo');
                 return;
             }
-            const total = parseInt(diasInput.value) * parseInt(presupuestoInput.value);
+            const nombre = nombreInput.value.trim();
+            const dias = parseInt(diasInput.value);
+            const presupuesto = parseInt(presupuestoInput.value);
+            const destino = destinoSelect.value;
+            const total = dias * presupuesto;
+            const itinerario = generarItinerario(destino, dias);
             const resultado = document.getElementById('resultado');
             resultado.classList.remove('d-none');
-            resultado.innerHTML = `✨ ${nombreInput.value.trim()}, presupuesto total para ${diasInput.value} días: S/ ${total}. ✨`;
+            resultado.innerHTML = `${nombre}, presupuesto total para ${dias} dias: S/ ${total}. Itinerario sugerido: ${itinerario}`;
         });
     }
 });
