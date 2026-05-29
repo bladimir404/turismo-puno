@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Puno - Destinos</title>
+    <meta name="description" content="Conoce los principales destinos turísticos de Puno: Lago Titicaca, Islas Uros, Sillustani, Taquile.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <main class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">✨ Purina Chiqaskuna ✨</h2>
+        
+        <div class="text-center mb-4">
+            <button class="btn btn-outline-primary filtro-btn" data-cat="todos">Todos</button>
+            <button class="btn btn-outline-primary filtro-btn" data-cat="lago">Lago</button>
+            <button class="btn btn-outline-primary filtro-btn" data-cat="isla">Islas</button>
+            <button class="btn btn-outline-primary filtro-btn" data-cat="arqueologia">Arqueología</button>
+        </div>
+
+        <div id="galeriaDestinos" class="grid-destinos"></div>
+    </main>
+
+    <div class="modal fade" id="modalDestino" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitulo"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalCuerpo"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jscript/comun.js"></script>
+    <script src="jscript/destinos.js"></script>
+</body>
+</html>

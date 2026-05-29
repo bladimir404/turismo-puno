@@ -1,0 +1,130 @@
+{
+  "destinos": [
+    {
+      "id": 1,
+      "nombre": "Titicaca",
+      "categoria": "lago",
+      "descripcion": "El lago navegable más alto del mundo, cuna mística de la civilización andina.",
+      "detalle": "Cuerpo de agua sagrado a 3812 metros de altitud; resguarda islas ancestrales, biodiversidad única y mitos de origen incaico.",
+      "imagen": "https://www.viaggidelgenio.it/wp-content/uploads/2026/02/peru-titicaca.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Uros",
+      "categoria": "isla",
+      "descripcion": "Islas flotantes de totora habitadas desde tiempos preincaicos.",
+      "detalle": "Más de 80 islas artificiales donde la vida gira en torno a la totora: viviendas, artesanía y barcas.",
+      "imagen": "https://media.istockphoto.com/id/547136514/es/foto/islas-de-los-uros.jpg?s=612x612&w=0&k=20&c=XqtIn2iaurHejDEnKt6pE8A7WaN4Vwh2i6MeN6OpzlE="
+    },
+    {
+      "id": 3,
+      "nombre": "Sillustani",
+      "categoria": "arqueologia",
+      "descripcion": "Torres funerarias de piedra que desafían el tiempo.",
+      "detalle": "Chullpas de hasta 12 metros de altura junto a la laguna Umayo, construidas por las culturas Colla e Inca.",
+      "imagen": "https://www.incatrilogytours.com/wp-content/uploads/2021/11/SILLUSTANI-TOURS.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Taquile",
+      "categoria": "isla",
+      "descripcion": "Donde los hombres tejen la memoria de sus ancestros.",
+      "detalle": "Patrimonio Cultural Inmaterial de la UNESCO. Sus tejidos y su organización comunal son únicos en el mundo.",
+      "imagen": "https://www.inkayniperutours.com/blog/wp-content/uploads/2020/03/isla-taquile-1.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Molloco",
+      "categoria": "arqueologia",
+      "descripcion": "Chullpas circulares y cuadradas en la ladera de los Andes.",
+      "detalle": "Antiguo cementerio de la cultura Lupaca, con impresionantes torres funerarias alejadas del turismo masivo.",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Complejo_arqueol%C3%B3gico_de_las_Chullpas_de_Molloco%2C_Puno.jpg/1920px-Complejo_arqueol%C3%B3gico_de_las_Chullpas_de_Molloco%2C_Puno.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Amantani",
+      "categoria": "isla",
+      "descripcion": "La isla más grande del lago Titicaca, famosa por su turismo vivencial y sus templos ceremoniales en las cumbres.",
+      "detalle": "Alberga los santuarios prehispánicos de Pachatata y Pachamama; no existen vehículos motorizados en todo su territorio.",
+      "imagen": "https://www.chullostravelperu.com/blog/wp-content/uploads/2023/04/Isla-Amantani-2.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Pucará",
+      "categoria": "arqueologia",
+      "descripcion": "Complejo arqueológico monumental preínca en Lampa, cuna de la arquitectura y litoescultura del altiplano.",
+      "detalle": "Presenta la gran pirámide escalonada de Kalasaya, un templo semisubterráneo en 'U' y monolitos rituales del 'Degollador'.",
+      "imagen": "https://punotours.com.pe/wp-content/uploads/2025/07/tour-lampa-pucara-1dia_01.jpg"
+    }
+  ],
+  "cultura": [
+    {
+      "titulo": "Festividad de la Virgen de la Candelaria",
+      "contenido": "Declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2014. Se celebra durante las dos primeras semanas de febrero en Puno. Es una explosión de fe, música y danza que reúne a más de 40,000 danzantes y 10,000 músicos. La festividad combina la tradición católica con rituales andinos dedicados a la Pachamama. El día central, 2 de febrero, la imagen de la Virgen recorre las calles entre alfombras de flores, mientras se ejecutan danzas emblemáticas como la Diablada, Morenada, Caporales, Waca Waca, Kullawada, Tinkus, entre otras. La fiesta concluye con la 'Albazo' y la 'Entrada de K'apos'."
+    },
+    {
+      "titulo": "Diablada Puneña",
+      "contenido": "Considerada la danza estrella de la Candelaria. Representa la eterna lucha entre el bien y el mal, inspirada en el Auto Sacramental del 'Ovejero' del siglo XVI. Los danzantes, ataviados con trajes de terciopelo bordados en oro y plata, usan imponentes máscaras de metal con cuernos de toro. La coreografía muestra las siete virtudes y los siete pecados capitales. La música, de origen militar, es interpretada por bandas de bronce con un ritmo majestuoso y trepidante."
+    },
+    {
+      "titulo": "Morenada",
+      "contenido": "Danza que evoca la tristeza de los esclavos africanos traídos a las minas de Potosí. Su paso lento y pesado simboliza la fatiga y las cadenas. Los trajes son enormes, adornados con lentejuelas y cascabeles (capachos). La coreografía incluye movimientos de brazos que recuerdan el manejo de las mazorcas de maíz. Es una de las danzas más populares y concurridas de la Candelaria, con letras que narran episodios de la vida minera y la nostalgia."
+    },
+    {
+      "titulo": "Caporales",
+      "contenido": "Danza juvenil creada en la década de 1960 por los hermanos Esteban en La Paz, Bolivia, pero con gran arraigo en Puno. Representa a los capataces de las haciendas, que montaban a caballo y llevaban botas con espuelas. Su ritmo es ágil y enérgico, con saltos y giros. Los trajes son coloridos, con botas de cuero, cascabeles en los tobillos y sombreros de ala ancha. Actualmente es una de las danzas con más comparsas dentro de la festividad."
+    },
+    {
+      "titulo": "Textilería Andina de Puno",
+      "contenido": "Los tejidos de las comunidades quechua y aymara de Puno (Taquile, Amantaní, Suasi, entre otras) son reconocidos mundialmente. La isla de Taquile fue declarada Obra Maestra del Patrimonio Oral e Intangible de la Humanidad por la UNESCO en 2005. Los hombres tejen y las mujeres hilan. Los dibujos geométricos representan la cosmovisión andina: el cóndor (hanan pacha), el puma (kay pacha) y la serpiente (ukhu pacha). Los materiales son lana de alpaca, vicuña y oveja teñidos con tintes naturales."
+    },
+    {
+      "titulo": "Pueblo Quechua y Aymara",
+      "contenido": "Los quechuas y aymaras son los dos pueblos originarios que habitan la región de Puno. Los quechuas llegaron durante el Imperio Incaico y se concentran en el norte de la región, mientras que los aymaras son más antiguos y predominan en el sur (zona del lago). Ambos mantienen lenguas vivas: el quechua (Runasimi) y el aymara (Jaqaru). Su legado incluye tecnologías agrícolas como los waru waru (camellones de cultivo), la domesticación de camélidos, la medicina tradicional (hoja de coca, muña, hierbas) y una organización social basada en el ayllu y la minka (trabajo comunitario)."
+    }
+],
+  "gastronomia": [
+    {
+      "nombre": "Trucha frita",
+      "descripcion": "Deliciosa trucha fresca del Lago Titicaca, frita al punto crocante, servida tradicionalmente con papas nativas, chuño y ensalada.",
+      "receta": "Marinar los filetes de trucha con limón, ajo picado, sal y pimienta. Pasar ligeramente por harina y freír en aceite bien caliente hasta dorar.",
+      "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/12/9d/35/16/trucha-frita.jpg"
+    },
+    {
+      "nombre": "Cuy chactado",
+      "descripcion": "Cuy entero eviscerado, sazonado con especias andinas y frito a presión bajo una piedra pesada para lograr una piel ultra crujiente.",
+      "receta": "Sazonar el cuy con ajo, comino, chicha de jora y sal. Dejar secar al sol, espolvorear con harina de maíz y freír sumergido presionando con una piedra.",
+      "imagen": "https://www.iperu.org/wp-content/uploads/2018/06/cuy-chactado.jpg"
+    },
+    {
+      "nombre": "Pesque de quinua",
+      "descripcion": "Puré tradicional andino a base de quinua de grano entero batida con leche y queso fresco, con una consistencia cremosa y nutritiva.",
+      "receta": "Sancochar la quinua pura sin sal hasta que reviente el grano. Batir enérgicamente añadiendo mantequilla, leche evaporada y abundante queso fresco picado.",
+      "imagen": "https://campograndeperu.com/wp-content/uploads/2024/07/pesque-de-quinua.jpg"
+    },
+    {
+      "nombre": "Chuño",
+      "descripcion": "Papa deshidratada mediante congelación y exposición al sol altiplánico, pilar fundamental de la alimentación en los Andes que acompaña guisos y caldos.",
+      "receta": "Remojar el chuño seco desde la noche anterior. Pelar, lavar repetidas veces para quitar el amargor y sancochar con un toque de sal y muña.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUvmMJm-450vvbIlzPdB9cqk5e54F2k_OU5A&s"
+    },
+    {
+      "nombre": "Moraya",
+      "descripcion": "También conocida como chuño blanco, es una papa procesada en aguas de río congeladas del Altiplano, resultando en un producto limpio y duradero.",
+      "receta": "Remojar las morayas por unas horas, lavarlas con agua fría, partirlas y sancocharlas al vapor acompañadas de queso frito o integradas en el chairo.",
+      "imagen": "https://www.rumbosdelperu.com/wp-content/uploads/2021/01/Moraya.png"
+    },
+    {
+      "nombre": "Api con pastel",
+      "descripcion": "Bebida caliente y reconfortante de maíz morado con especias, servida tradicionalmente junto a un pastel inflado frito espolvoreado con azúcar impalpable.",
+      "receta": "Hervir el maíz morado molido con canela, clavo de olor y cáscara de naranja. Endulzar y espesar con chuño disuelto. Servir junto a la masa estirada frita.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxFTtPA6TsJra2u6NB6riX4YJynqSWX9WP3Q&s"
+    },
+    {
+      "nombre": "Mazamorra de calabaza",
+      "descripcion": "Postre dulce y rústico preparado a base de pulpa de calabaza madura sancochada con chancaca y harinas locales, típico de las épocas de cosecha.",
+      "receta": "Cocinar los trozos de calabaza con canela hasta que se deshagan. Agregar chancaca disuelta, azúcar, un chorro de leche y espesar con harina de habas o maíz.",
+      "imagen": "https://jameaperu.com/assets/images/mazamorra-de-calabaza_800x534.webp"
+    }
+  ]
+}
