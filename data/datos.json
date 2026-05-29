@@ -6,7 +6,7 @@
       "categoria": "lago",
       "descripcion": "El lago navegable más alto del mundo, cuna mística de la civilización andina.",
       "detalle": "Cuerpo de agua sagrado a 3812 metros de altitud; resguarda islas ancestrales, biodiversidad única y mitos de origen incaico.",
-      "imagen": "../images/Titicaca.jpg"
+      "imagen": "images/Titicaca.jpg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "categoria": "isla",
       "descripcion": "Islas flotantes de totora habitadas desde tiempos preincaicos.",
       "detalle": "Más de 80 islas artificiales donde la vida gira en torno a la totora: viviendas, artesanía y barcas.",
-      "imagen": "../images/Uros.jpg"
+      "imagen": "images/Uros.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "categoria": "arqueologia",
       "descripcion": "Torres funerarias de piedra que desafían el tiempo.",
       "detalle": "Chullpas de hasta 12 metros de altura junto a la laguna Umayo, construidas por las culturas Colla e Inca.",
-      "imagen": "../images/Sillustani.jpg"
+      "imagen": "images/Sillustani.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "categoria": "isla",
       "descripcion": "Donde los hombres tejen la memoria de sus ancestros.",
       "detalle": "Patrimonio Cultural Inmaterial de la UNESCO. Sus tejidos y su organización comunal son únicos en el mundo.",
-      "imagen": "../images/Taquile.webp"
+      "imagen": "images/Taquile.webp"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "categoria": "arqueologia",
       "descripcion": "Chullpas circulares y cuadradas en la ladera de los Andes.",
       "detalle": "Antiguo cementerio de la cultura Lupaca, con impresionantes torres funerarias alejadas del turismo masivo.",
-      "imagen": "../images/Molloco.jpg"
+      "imagen": "images/Molloco.jpg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "categoria": "isla",
       "descripcion": "La isla más grande del lago Titicaca, famosa por su turismo vivencial y sus templos ceremoniales en las cumbres.",
       "detalle": "Alberga los santuarios prehispánicos de Pachatata y Pachamama; no existen vehículos motorizados en todo su territorio.",
-      "imagen": "../images/Amantani.jpg"
+      "imagen": "images/Amantani.jpg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "categoria": "arqueologia",
       "descripcion": "Complejo arqueológico monumental preínca en Lampa, cuna de la arquitectura y litoescultura del altiplano.",
       "detalle": "Presenta la gran pirámide escalonada de Kalasaya, un templo semisubterráneo en 'U' y monolitos rituales del 'Degollador'.",
-      "imagen": "../images/Pucara.jpg"
+      "imagen": "images/Pucara.jpg"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "categoria": "pueblo",
       "descripcion": "La ciudad rosa del altiplano, con arquitectura colonial.",
       "detalle": "Templo Santiago Apóstol y réplica de la Capilla Sixtina en su interior.",
-      "imagen": "../images/Lampa.jpg"
+      "imagen": "images/Lampa.jpg"
     },
     {
       "id": 9,
@@ -104,43 +104,43 @@
       "nombre": "Trucha frita",
       "descripcion": "Deliciosa trucha fresca del Lago Titicaca, frita al punto crocante, servida tradicionalmente con papas nativas, chuño y ensalada.",
       "receta": "Marinar los filetes de trucha con limón, ajo picado, sal y pimienta. Pasar ligeramente por harina y freír en aceite bien caliente hasta dorar.",
-      "imagen": "../images/TruchaFrita.jpg"
+      "imagen": "images/TruchaFrita.jpg"
     },
     {
       "nombre": "Cuy chactado",
       "descripcion": "Cuy entero eviscerado, sazonado con especias andinas y frito a presión bajo una piedra pesada para lograr una piel ultra crujiente.",
       "receta": "Sazonar el cuy con ajo, comino, chicha de jora y sal. Dejar secar al sol, espolvorear con harina de maíz y freír sumergido presionando con una piedra.",
-      "imagen": "../images/CuyChatado.jpg"
+      "imagen": "images/CuyChatado.jpg"
     },
     {
       "nombre": "Pesque de quinua",
       "descripcion": "Puré tradicional andino a base de quinua de grano entero batida con leche y queso fresco, con una consistencia cremosa y nutritiva.",
       "receta": "Sancochar la quinua pura sin sal hasta que reviente el grano. Batir enérgicamente añadiendo mantequilla, leche evaporada y abundante queso fresco picado.",
-      "imagen": "../images/PesqueQuinua.jpg"
+      "imagen": "images/PesqueQuinua.jpg"
     },
     {
       "nombre": "Chuño",
       "descripcion": "Papa deshidratada mediante congelación y exposición al sol altiplánico, pilar fundamental de la alimentación en los Andes que acompaña guisos y caldos.",
       "receta": "Remojar el chuño seco desde la noche anterior. Pelar, lavar repetidas veces para quitar el amargor y sancochar con un toque de sal y muña.",
-      "imagen": "../images/Chuño.jpg"
+      "imagen": "images/Chuño.jpg"
     },
     {
       "nombre": "Moraya",
       "descripcion": "También conocida como chuño blanco, es una papa procesada en aguas de río congeladas del Altiplano, resultando en un producto limpio y duradero.",
       "receta": "Remojar las morayas por unas horas, lavarlas con agua fría, partirlas y sancocharlas al vapor acompañadas de queso frito o integradas en el chairo.",
-      "imagen": "../images/Moraya.png"
+      "imagen": "images/Moraya.png"
     },
     {
       "nombre": "Api con pastel",
       "descripcion": "Bebida caliente y reconfortante de maíz morado con especias, servida tradicionalmente junto a un pastel inflado frito espolvoreado con azúcar impalpable.",
       "receta": "Hervir el maíz morado molido con canela, clavo de olor y cáscara de naranja. Endulzar y espesar con chuño disuelto. Servir junto a la masa estirada frita.",
-      "imagen": "../images/ApiconPastel.jpg"
+      "imagen": "images/ApiconPastel.jpg"
     },
     {
       "nombre": "Mazamorra de calabaza",
       "descripcion": "Postre dulce y rústico preparado a base de pulpa de calabaza madura sancochada con chancaca y harinas locales, típico de las épocas de cosecha.",
       "receta": "Cocinar los trozos de calabaza con canela hasta que se deshagan. Agregar chancaca disuelta, azúcar, un chorro de leche y espesar con harina de habas o maíz.",
-      "imagen": "../images/mazamorra-de-calabaza.webp"
+      "imagen": "images/mazamorra-de-calabaza.webp"
     }
   ]
 }
