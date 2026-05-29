@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
-
-    fetch('../data/datos.json')
+    fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('mapa')) {
         const mapa = L.map('mapa').setView([-15.8402, -69.9562], 9);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+            attribution: '© OSM'
         }).addTo(mapa);
         L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("Lago Titicaca");
         L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("Islas Uros");
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica."
         };
         let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
-        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre.";
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre para explorar.";
         if (dias <= 2) return plan.split('.')[0] + '.';
         if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
         return plan;
@@ -99,7 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
             resultado.classList.remove('d-none');
             resultado.innerHTML = `${nombreInput.value.trim()}, presupuesto total para ${diasInput.value} días: S/ ${total}. Itinerario sugerido: ${itinerario}`;
         });
-    }
-});
     }
 });
