@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
-    // Cargar destinos desde el JSON (ruta correcta: raíz del proyecto)
-    fetch('datos.json')
+    fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
