@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
-    fetch('data/datos.json')
+    fetch('datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
@@ -19,15 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     if (document.getElementById('mapa')) {
-        const mapa = L.map('mapa').setView([-15.8402, -69.9562], 9);
+        const mapa = L.map('mapa').setView([-15.84, -69.95], 8.5);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '© OSM'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
         }).addTo(mapa);
-        L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("Lago Titicaca").bindTooltip("Lago Titicaca");
-        L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("Islas Uros").bindTooltip("Islas Uros");
-        L.marker([-15.6942, -70.0976]).addTo(mapa).bindPopup("Sillustani").bindTooltip("Sillustani");
-        L.marker([-15.7747, -69.6941]).addTo(mapa).bindPopup("Taquile").bindTooltip("Taquile");
-        L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("Cutimbo").bindTooltip("Cutimbo");
+
+        const lugares = [
+            { nombre: "Lago Titicaca", coords: [-15.8251, -69.6517], desc: "El lago navegable más alto del mundo" },
+            { nombre: "Islas Uros", coords: [-15.8237, -69.7132], desc: "Islas flotantes de totora" },
+            { nombre: "Sillustani", coords: [-15.6942, -70.0976], desc: "Chullpas funerarias" },
+            { nombre: "Taquile", coords: [-15.7747, -69.6941], desc: "Tejidos tradicionales" },
+            { nombre: "Cutimbo", coords: [-16.0251, -69.6443], desc: "Chullpas pintadas" },
+            { nombre: "Amantani", coords: [-15.658, -69.704], desc: "Isla con templos ceremoniales" },
+            { nombre: "Molloco", coords: [-15.785, -70.115], desc: "Chullpas circulares" },
+            { nombre: "Pucará", coords: [-15.070, -70.375], desc: "Centro arqueológico preínca" },
+            { nombre: "Lampa", coords: [-15.364, -70.366], desc: "Ciudad rosa, Capilla Sixtina" }
+        ];
+
+        lugares.forEach(lugar => {
+            L.marker(lugar.coords)
+                .addTo(mapa)
+                .bindPopup(`<b>${lugar.nombre}</b><br>${lugar.desc}`)
+                .bindTooltip(lugar.nombre);
+        });
     }
 
     const form = document.getElementById('formItinerario');
@@ -64,19 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generarItinerario(destinoNombre, dias) {
         const planes = {
-            "Titicaca": "Día 1: Llegada y paseo en bote. Día 2: Visita a islas del Sol y Luna.",
-            "Uros": "Día 1: Recorrido por islas flotantes. Día 2: Taller de artesanía en totora.",
-            "Sillustani": "Día 1: Visita a las chullpas. Día 2: Caminata por la laguna Umayo.",
-            "Taquile": "Día 1: Navegación y senderismo. Día 2: Conoce los tejidos tradicionales.",
-            "Cutimbo": "Día 1: Visita a las chullpas pintadas. Día 2: Mirador del altiplano.",
-            "Amantani": "Día 1: Llegada y noche con familia local. Día 2: Subida a templos Pachatata.",
-            "Molloco": "Día 1: Recorrido por las chullpas. Día 2: Fotografía y naturaleza.",
-            "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica."
+            "Titicaca": "Día 1: Llegada a Puno y paseo por el malecón. Día 2: Navegación a las islas del Sol y la Luna. Día 3: Visita a comunidades locales.",
+            "Uros": "Día 1: Recorrido por las islas flotantes. Día 2: Taller de artesanía. Día 3: Navegación en balsa.",
+            "Sillustani": "Día 1: Visita a las chullpas. Día 2: Caminata por la laguna Umayo. Día 3: Miradores.",
+            "Taquile": "Día 1: Navegación y senderismo. Día 2: Conoce los tejidos. Día 3: Encuentro con la comunidad.",
+            "Cutimbo": "Día 1: Visita a las chullpas pintadas. Día 2: Mirador del altiplano. Día 3: Exploración.",
+            "Amantani": "Día 1: Llegada y noche con familia. Día 2: Subida a templos Pachatata. Día 3: Despedida.",
+            "Molloco": "Día 1: Recorrido por las chullpas. Día 2: Fotografía. Día 3: Museo local.",
+            "Pucará": "Día 1: Pirámide y museo lítico. Día 2: Talleres de cerámica. Día 3: Recorrido por el pueblo.",
+            "Lampa": "Día 1: Templo Santiago Apóstol. Día 2: Capilla Sixtina. Día 3: Recorrido cultural."
         };
         let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
-        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre.";
-        if (dias <= 2) return plan.split('.')[0] + '.';
-        if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre. Día 3: Actividades culturales.";
+        if (dias === 1) return plan.split('.')[0] + '.';
+        if (dias === 2) return plan.split('.')[0] + '.' + plan.split('.')[1] + '.';
         return plan;
     }
 
