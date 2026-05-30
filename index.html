@@ -3,91 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo Puno - Inicio</title>
-    <meta name="description" content="Descubre Puno, el corazón del Lago Titicaca. Turismo, cultura y gastronomía andina.">
-    <meta property="og:title" content="Turismo Puno - Inicio">
-    <meta property="og:description" content="Descubre Puno, el corazón del Lago Titicaca.">
+    <title>Turismo Puno — Inicio | Puno Digital</title>
+    <meta name="description" content="Descubre Puno: Lago Titicaca, cultura viva, gastronomía andina y turismo sostenible en el altiplano peruano.">
+    <meta name="author" content="Turismo Puno">
+    <meta property="og:title" content="Turismo Puno — Capital del Folclore">
+    <meta property="og:description" content="Plataforma web turística y cultural de la región Puno.">
     <meta property="og:image" content="https://quechuasperuviajes.com/wp-content/uploads/2026/01/lugares-turisticos-en-puno.webp">
     <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta property="og:locale" content="es_PE">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
-    <header class="visually-hidden">
-        <h1>Turismo Puno</h1>
-    </header>
-    <main class="container-fluid px-0 mt-5 pt-3">
-        <section aria-label="Carrusel de imágenes">
+<body data-page="inicio">
+
+    <main id="contenido-principal" class="page-main flex-grow-1">
+
+        <section class="hero-carousel" aria-label="Galería principal de Puno">
             <div id="carouselPuno" class="carousel slide hero-carousel" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Lago Titicaca"></button>
+                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="1" aria-label="Islas Uros"></button>
+                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="2" aria-label="Candelaria"></button>
+                    <button type="button" data-bs-target="#carouselPuno" data-bs-slide-to="3" aria-label="Plaza de Armas"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://quechuasperuviajes.com/wp-content/uploads/2026/01/lugares-turisticos-en-puno.webp" class="d-block w-100" alt="Puno">
+                        <img src="https://quechuasperuviajes.com/wp-content/uploads/2026/01/lugares-turisticos-en-puno.webp" class="d-block w-100" alt="Panorámica del Lago Titicaca y la ciudad de Puno">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Puno</h3>
-                            <p>Capital del Folclore Peruano y de América</p>
+                            <span class="badge bg-warning text-dark mb-2">3 812 m s. n. m.</span>
+                            <h2>Lago Titicaca</h2>
+                            <p>El lago navegable más alto del mundo, corazón del altiplano.</p>
+                            <a href="destinos.html" class="btn btn-light btn-sm mt-2">Explorar destinos</a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://trexperienceperu.com/sites/default/files/2025-01/things%20to%20do%20in%20puno.jpg" class="d-block w-100" alt="Islas Uros">
+                        <img src="https://trexperienceperu.com/sites/default/files/2025-01/things%20to%20do%20in%20puno.jpg" class="d-block w-100" alt="Islas flotantes de los Uros">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Cultura Viva</h3>
-                            <p>Ciudad del Lago Sagrado</p>
+                            <span class="badge bg-warning text-dark mb-2">Cultura viva</span>
+                            <h2>Islas de los Uros</h2>
+                            <p>Tradición milenaria en totora sobre aguas sagradas.</p>
+                            <a href="cultura.html" class="btn btn-light btn-sm mt-2">Conocer cultura</a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://gasfiteros.pe/wp-content/uploads/2022/11/plaza-de-armas-puno.jpg" class="d-block w-100" alt="Plaza de Armas de Puno">
+                        <img src="https://www.peru.travel/Portals/1/Images/Noticias/candelaria-puno.jpg" class="d-block w-100" alt="Festividad de la Virgen de la Candelaria en Puno">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Ciudad de Plata</h3>
-                            <p>Cuna de la Catedral Mestiza</p>
+                            <span class="badge bg-warning text-dark mb-2">Patrimonio UNESCO</span>
+                            <h2>Virgen de la Candelaria</h2>
+                            <p>Capital del folclore peruano y de América.</p>
+                            <a href="cultura.html" class="btn btn-light btn-sm mt-2">Ver festividades</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://gasfiteros.pe/wp-content/uploads/2022/11/plaza-de-armas-puno.jpg" class="d-block w-100" alt="Plaza de Armas de Puno al atardecer">
+                        <div class="carousel-caption d-none d-md-block">
+                            <span class="badge bg-warning text-dark mb-2">Ciudad de plata</span>
+                            <h2>Puno histórico</h2>
+                            <p>Arquitectura colonial y vistas al Titicaca.</p>
+                            <a href="itinerario.html" class="btn btn-light btn-sm mt-2">Planificar viaje</a>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPuno" data-bs-slide="prev" aria-label="Anterior">
-                    <span class="carousel-control-prev-icon"></span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPuno" data-bs-slide="prev" aria-label="Diapositiva anterior">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselPuno" data-bs-slide="next" aria-label="Siguiente">
-                    <span class="carousel-control-next-icon"></span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPuno" data-bs-slide="next" aria-label="Diapositiva siguiente">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </button>
             </div>
         </section>
 
-        <section class="container text-center my-5 py-4">
-            <div class="d-inline-block bg-light text-primary px-4 py-2 rounded-pill mb-4">
-                <i class="bi bi-geo-alt-fill"></i> Destino imperdible
-            </div>
-            <h1 class="display-4 fw-bold">Bienvenido a <span class="text-primary">Puno</span></h1>
-            <p class="lead fs-3">Descubre la magia del altiplano peruano, el corazón del Lago Titicaca.</p>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-8">
-                    <p class="fs-5">Explora nuestras páginas: <strong>Destinos, Cultura, Gastronomía</strong> y planifica tu viaje.</p>
-                    <p class="fs-4 fst-italic">"¡Puno te espera!"</p>
-                    <a href="destinos.html" class="btn btn-primary btn-lg mt-2">
-                        <i class="bi bi-binoculars"></i> Comienza tu aventura
-                    </a>
+        <section class="container py-5 text-center" aria-labelledby="titulo-bienvenida">
+            <span class="badge bg-warning text-dark mb-3 px-3 py-2">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Destino imperdible
+            </span>
+            <h1 id="titulo-bienvenida" class="display-4 fw-bold">Bienvenido a <span class="text-primary">Puno</span></h1>
+            <p class="lead fs-3">Descubre la magia del altiplano peruano, corazón del Lago Titicaca.</p>
+            <p class="fs-5">Explora <strong>destinos</strong>, <strong>cultura viva</strong>, <strong>gastronomía</strong> y planifica tu viaje con nuestro itinerario interactivo.</p>
+            <a href="destinos.html" class="btn btn-primary btn-lg mt-2">
+                <i class="bi bi-binoculars" aria-hidden="true"></i> Comienza tu aventura
+            </a>
+        </section>
+
+        <section class="container pb-5" aria-labelledby="titulo-geografia">
+            <header class="text-center mb-4">
+                <h2 id="titulo-geografia" class="fw-bold">Geografía del altiplano puneño</h2>
+                <p class="text-muted">Lago Titicaca, altiplano y cordilleras que definen el paisaje andino</p>
+            </header>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Altiplano andino</h3>
+                            <p>Puno se ubica en el altiplano a más de 3800 msnm, una vasta meseta que comparte con Bolivia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Cordillera Carabaya</h3>
+                            <p>Cadena montañosa al norte de Puno, con picos que superan los 6000 msnm y lagunas de origen glaciar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Cordillera Apolobamba</h3>
+                            <p>En el límite con Cusco y Bolivia, alberga una de las áreas de mayor biodiversidad del altiplano.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section class="container my-5">
-            <h2 class="text-center mb-4">Geografía de Puno</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <p>Puno se ubica en el altiplano andino, a orillas del Lago Titicaca. El territorio se extiende por las cordilleras de Carabaya y Apolobamba, con picos que superan los 6000 msnm. Esta geografía determina su clima frío y su biodiversidad única.</p>
+        <section class="container pb-5">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <article class="card border-0 shadow-sm p-4 h-100">
+                        <h2 class="h4 fw-bold text-primary">Turismo sostenible en Puno</h2>
+                        <p>La región combina patrimonio natural y cultural: islas del Titicaca, sitios arqueológicos como Sillustani y Cutimbo, y festividades declaradas Patrimonio de la Humanidad, como la Virgen de la Candelaria.</p>
+                        <p>Los pueblos <strong>quechua</strong> y <strong>aymara</strong> sostienen lenguas vivas, textilería ancestral y una gastronomía única: trucha, chuño, moraya y cuy chactado.</p>
+                        <a href="cultura.html" class="btn btn-outline-primary mt-2">Conocer cultura viva</a>
+                    </article>
                 </div>
+                <aside class="col-lg-4" aria-label="Enlaces rápidos">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h2 class="h5 fw-bold">Enlaces rápidos</h2>
+                        <div class="d-flex flex-column gap-2 mt-2">
+                            <a href="destinos.html" class="btn btn-outline-secondary"><i class="bi bi-map"></i> Destinos turísticos</a>
+                            <a href="gastronomia.html" class="btn btn-outline-secondary"><i class="bi bi-cup-hot"></i> Sabores de Puno</a>
+                            <a href="itinerario.html" class="btn btn-outline-secondary"><i class="bi bi-calendar3"></i> Planifica tu viaje</a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/comun.js"></script>
 </body>
-<header class="visually-hidden">
-    <h1>Turismo Puno - QIP</h1>
-</header>
 </html>
