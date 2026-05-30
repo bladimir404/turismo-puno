@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
-    fetch('datos.json')
+    fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
