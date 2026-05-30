@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo Puno - Itinerario Interactivo</title>
-    <meta name="description" content="Planifica tu viaje a Puno: calcula presupuesto y mira ubicaciones en el mapa.">
-    <meta property="og:title" content="Turismo Puno - Itinerario">
-    <meta property="og:description" content="Planifica tu viaje a Puno con presupuesto personalizado y mapa interactivo.">
-    <meta property="og:image" content="https://quechuasperuviajes.com/wp-content/uploads/2026/01/lugares-turisticos-en-puno.webp">
+    <title>Itinerario Interactivo — Turismo Puno</title>
+    <meta name="description" content="Planifica tu viaje a Puno: presupuesto, itinerario por días y mapa de destinos.">
+    <meta property="og:title" content="Planifica tu viaje — Puno">
+    <meta property="og:description" content="Formulario interactivo con mapa Leaflet.">
     <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,53 +14,50 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <header class="visually-hidden">
-        <h1>Turismo Puno - Itinerario</h1>
-    </header>
+
     <main class="container mt-5 pt-5">
-        <section>
-            <h2 class="text-center mb-4">Planifica tu viaje</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <form id="formItinerario" class="p-3 border rounded shadow-sm bg-white">
-                        <div class="mb-3">
-                            <label class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                            <div class="invalid-feedback">Mínimo 3 letras</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">Correo válido requerido</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Días de estadía</label>
-                            <input type="number" class="form-control" id="dias" required min="1" max="15" value="2">
-                            <div class="invalid-feedback">Días entre 1 y 15</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Presupuesto por día (S/.)</label>
-                            <input type="number" class="form-control" id="presupuesto" required min="50" value="150">
-                            <div class="invalid-feedback">Mínimo S/ 50</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Destino principal</label>
-                            <select class="form-select" id="destinoSelect" required>
-                                <option value="">Cargando destinos...</option>
-                            </select>
-                            <div class="invalid-feedback">Seleccione un destino</div>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Calcular presupuesto</button>
-                        <div id="resultado" class="alert alert-success mt-3 d-none"></div>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <div id="mapa"></div>
-                    <p class="text-muted small mt-2">Marcadores: Lago Titicaca, Uros, Sillustani, Taquile, Cutimbo, Molloco, Amantani, Pucará, Lampa</p>
-                </div>
+        <h2 class="text-center mb-4">🗺️ Planifica tu viaje</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="formItinerario" class="p-3 border rounded shadow-sm bg-white">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                        <div class="invalid-feedback">Mínimo 3 letras</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Correo válido requerido</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Días de estadía</label>
+                        <input type="number" class="form-control" id="dias" required min="1" max="15" value="2">
+                        <div class="invalid-feedback">Días entre 1 y 15</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Presupuesto por día (S/.)</label>
+                        <input type="number" class="form-control" id="presupuesto" required min="50" value="150">
+                        <div class="invalid-feedback">Mínimo S/ 50</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Destino principal</label>
+                        <select class="form-select" id="destinoSelect" required>
+                            <option value="">Cargando destinos...</option>
+                        </select>
+                        <div class="invalid-feedback">Seleccione un destino</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Calcular presupuesto</button>
+                    <div id="resultado" class="alert alert-success mt-3 d-none"></div>
+                </form>
             </div>
-        </section>
+            <div class="col-md-6">
+                <div id="mapa"></div>
+                <p class="text-muted small mt-2">Marcadores: Lago Titicaca, Uros, Sillustani, Taquile, Cutimbo, Molloco, Amantani, Pucará, Lampa</p>
+            </div>
+        </div>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/comun.js"></script>
