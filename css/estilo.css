@@ -52,7 +52,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     margin-right: 0.5rem;
 }
 
-/* CARRUSEL */
 .hero-carousel .carousel-item {
     min-height: 50vh;
 }
@@ -87,7 +86,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     }
 }
 
-/* GALERÍA DE DESTINOS (GRID) */
 .grid-destinos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -114,7 +112,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     border-radius: 20px;
 }
 
-/* FILTROS */
 .filtro-btn {
     margin: 0.25rem;
     transition: all 0.2s;
@@ -123,7 +120,6 @@ body.modo-oscuro .btn-outline-primary:hover {
     transform: scale(1.02);
 }
 
-/* ACORDEÓN CULTURA */
 #accordionCultura .accordion-item {
     background-color: var(--blanco);
     border: 1px solid rgba(0,0,0,.125);
@@ -191,7 +187,6 @@ footer a:hover {
     }
 }
 
-/* ANIMACIONES */
 .modal-content {
     animation: fadeInUp 0.3s ease-out;
 }
