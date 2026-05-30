@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
     
-    fetch('datos.json')
+    fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
@@ -25,13 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             attribution: '© OSM'
         }).addTo(mapa);
 
-        // Marcadores completos (los 5 que ya tenías + los 4 que faltan)
         L.marker([-15.8251, -69.6517]).addTo(mapa).bindPopup("Lago Titicaca");
         L.marker([-15.8237, -69.7132]).addTo(mapa).bindPopup("Islas Uros");
         L.marker([-15.6942, -70.0976]).addTo(mapa).bindPopup("Sillustani");
         L.marker([-15.7747, -69.6941]).addTo(mapa).bindPopup("Taquile");
         L.marker([-16.0251, -69.6443]).addTo(mapa).bindPopup("Cutimbo");
-        // Nuevos marcadores
         L.marker([-15.8581, -70.0026]).addTo(mapa).bindPopup("Molloco");
         L.marker([-15.6583, -69.7274]).addTo(mapa).bindPopup("Amantani");
         L.marker([-15.8126, -70.1213]).addTo(mapa).bindPopup("Pucará");
