@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
-    fetch('data/datos.json')
+
+    fetch('datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
@@ -68,26 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function generarItinerario(destinoNombre, dias) {
-    const planesBase = {
-        "Titicaca": ["Llegada y paseo en bote", "Visita a islas del Sol y Luna", "Comunidades locales y regreso"],
-        "Uros": ["Recorrido por islas flotantes", "Taller de artesanía en totora", "Navegación en balsa"],
-        "Sillustani": ["Visita a las chullpas", "Caminata por laguna Umayo", "Miradores y fotografía"],
-        "Taquile": ["Navegación y senderismo", "Conoce los tejidos tradicionales", "Encuentro con la comunidad"],
-        "Cutimbo": ["Visita a las chullpas pintadas", "Mirador del altiplano", "Senderismo y picnic"],
-        "Amantani": ["Llegada y noche con familia local", "Subida a templos Pachatata", "Convivencia y despedida"],
-        "Molloco": ["Recorrido por las chullpas circulares", "Fotografía y naturaleza", "Visita a museo local"],
-        "Pucará": ["Visita a la pirámide y museo lítico", "Talleres de cerámica", "Recorrido por el pueblo"],
-        "Lampa": ["Visita al templo Santiago Apóstol", "Réplica de la Capilla Sixtina", "Recorrido cultural"]
-    };
-    let clave = Object.keys(planesBase).find(k => destinoNombre.includes(k));
-    let actividades = clave ? planesBase[clave] : ["Recorrido por el destino", "Tiempo libre", "Actividades culturales"];
-    let plan = "";
-    for (let i = 0; i < dias; i++) {
-        let actividad = actividades[i % actividades.length];
-        plan += `Día ${i+1}: ${actividad}. `;
+        const planes = {
+            "Titicaca": "Día 1: Llegada y paseo en bote. Día 2: Visita a islas del Sol y Luna.",
+            "Uros": "Día 1: Recorrido por islas flotantes. Día 2: Taller de artesanía en totora.",
+            "Sillustani": "Día 1: Visita a las chullpas. Día 2: Caminata por la laguna Umayo.",
+            "Taquile": "Día 1: Navegación y senderismo. Día 2: Conoce los tejidos tradicionales.",
+            "Cutimbo": "Día 1: Visita a las chullpas pintadas. Día 2: Mirador del altiplano.",
+            "Amantani": "Día 1: Llegada y noche con familia local. Día 2: Subida a templos Pachatata.",
+            "Molloco": "Día 1: Recorrido por las chullpas. Día 2: Fotografía y naturaleza.",
+            "Pucará": "Día 1: Visita a la pirámide y museo lítico. Día 2: Talleres de cerámica.",
+            "Lampa": "Día 1: Visita al templo Santiago Apóstol. Día 2: Conoce la réplica de la Capilla Sixtina."
+        };
+        let clave = Object.keys(planes).find(k => destinoNombre.includes(k));
+        let plan = clave ? planes[clave] : "Día 1: Recorrido por el destino. Día 2: Tiempo libre.";
+        if (dias <= 2) return plan.split('.')[0] + '.';
+        if (dias >= 4) plan += " Día adicional: Visita a otros atractivos cercanos.";
+        return plan;
     }
-    return plan;
-}
 
     nombreInput.addEventListener('input', validarFormulario);
     emailInput.addEventListener('input', validarFormulario);
