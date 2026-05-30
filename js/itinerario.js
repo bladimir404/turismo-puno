@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const destinoSelect = document.getElementById('destinoSelect');
 
-    // Ajusta aquí la ruta si tu JSON está en otro lado
-    fetch('datos.json')
+    
+    fetch('data/datos.json')
         .then(response => response.json())
         .then(data => {
             const destinos = data.destinos;
