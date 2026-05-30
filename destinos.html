@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo Puno - Destinos</title>
-    <meta name="description" content="Conoce los principales destinos turísticos de Puno: Lago Titicaca, Islas Uros, Sillustani, Taquile.">
+    <meta name="description" content="Conoce los principales destinos turísticos de Puno: Lago Titicaca, Islas Uros, Sillustani, Taquile, Cutimbo, Lampa.">
+    <meta property="og:title" content="Turismo Puno - Destinos">
+    <meta property="og:description" content="Conoce los destinos turísticos de Puno: Lago Titicaca, Islas Uros, Sillustani, Taquile, Cutimbo, Lampa y más.">
+    <meta property="og:image" content="https://quechuasperuviajes.com/wp-content/uploads/2026/01/lugares-turisticos-en-puno.webp">
+    <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-
+    <header class="visually-hidden">
+        <h1>Turismo Puno - Destinos</h1>
+    </header>
     <main class="container mt-5 pt-5">
-        <h2 class="text-center mb-4">✨ Purina Chiqaskuna ✨</h2>
-        
-        <div class="text-center mb-4">
-    <button class="btn btn-outline-primary filtro-btn" data-cat="todos">Todos</button>
-    <button class="btn btn-outline-primary filtro-btn" data-cat="lago">Lago</button>
-    <button class="btn btn-outline-primary filtro-btn" data-cat="isla">Islas</button>
-    <button class="btn btn-outline-primary filtro-btn" data-cat="arqueologia">Arqueología</button>
-    <button class="btn btn-outline-primary filtro-btn" data-cat="pueblo">Pueblo</button>
-        </div>
-
-        <div id="galeriaDestinos" class="grid-destinos"></div>
+        <section>
+            <h2 class="text-center mb-4">✨ Purina Chiqaskuna ✨</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-primary filtro-btn" data-cat="todos">Todos</button>
+                <button class="btn btn-outline-primary filtro-btn" data-cat="lago">Lago</button>
+                <button class="btn btn-outline-primary filtro-btn" data-cat="isla">Islas</button>
+                <button class="btn btn-outline-primary filtro-btn" data-cat="arqueologia">Arqueología</button>
+                <button class="btn btn-outline-primary filtro-btn" data-cat="pueblo">Pueblo</button>
+            </div>
+            <div id="galeriaDestinos" class="grid-destinos"></div>
+        </section>
     </main>
-
     <div class="modal fade" id="modalDestino" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -36,9 +41,6 @@
             </div>
         </div>
     </div>
-<header class="visually-hidden">
-    <h1>Turismo Puno - QIP</h1>
-</header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/comun.js"></script>
     <script src="js/destinos.js"></script>
